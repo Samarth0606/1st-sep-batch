@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* css variables */
+:root{
+    --cell-size : 100px;
+    --mark-size : calc( var(--cell-size) * 0.9 );
+}
+
+/* board */
+.board{
+    margin: 0 auto;
+    width: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3 , auto);
+    justify-content: center;
+    align-content: center;
+}
+.cell{
+    height: var( --cell-size );
+    width: var( --cell-size );
+    border: 1px solid black;
+    /* background-color: green; */
+}
+
+/* remove border */
+/* pseudo-elements(topic-mdn) */
+.cell:first-child , 
+.cell:nth-of-type(2) ,
+.cell:nth-of-type(3){
+    border-top: none;
+} 
+.cell:nth-child(3n+3){
+    border-right: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:last-child , 
+.cell:nth-of-type(7) ,
+.cell:nth-of-type(8){
+    border-bottom: none;
+} 
